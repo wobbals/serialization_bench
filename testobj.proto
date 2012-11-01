@@ -1,0 +1,27 @@
+//output: {"type":4,"id":"2_MX4xMzExMjU3MX43Mi41LjE2Ny4xNTh-VGh1IE9jdCAxOCAxNToxMzoyOCBQRFQgMjAxMn4wLjMzMjY4NDF-_35797926","data":{"type":3,"action":1,"objectKey":"2_MX4xMzExMjU3MX43Mi41LjE2Ny4xNTh-VGh1IE9jdCAxOCAxNToxMzoyOCBQRFQgMjAxMn4wLjMzMjY4NDF-","key":"connections","value":{"connectionsCount":2,"currentConnection":"35797926"},"currentActionId":77,"replyExpected":true}}
+
+option java_package = "com.opentok.benchmark";
+option java_outer_classname = "ProtoTestObject";
+
+message TestObject {
+  enum Type { ONE = 1; TWO = 2; THREE = 3; FOUR = 4; }
+  optional Type type = 1;
+  optional string id = 2;
+  optional InnerObject data = 3;
+}
+
+message InnerObject {
+  enum Type { ONE = 1; TWO = 2; THREE = 3; FOUR = 4; }
+  optional Type type = 1;
+  optional Type action = 2;
+  optional string objectKey = 3;
+  optional string key = 4;
+  optional InnerInnerObject value = 5;  
+  optional int32 currentActionId = 6;
+  optional bool replyExpected = 7;
+}
+
+message InnerInnerObject {
+  optional int32 connectionsCount = 1;
+  optional string currentConnection = 2;
+}
